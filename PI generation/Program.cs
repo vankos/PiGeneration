@@ -8,8 +8,8 @@ namespace PI_generation
         static void Main(string[] args)
         { 
             Console.Write("What accuracy you want?(numbers after the decimal point)\n");
-            int n = Convert.ToInt32(Console.ReadLine());
-            Console.Write(FindPi(n+1));      
+            int NumberOfNumbers = Convert.ToInt32(Console.ReadLine());
+            Console.Write(FindPi(NumberOfNumbers+1));      
             Console.Write("\nPress enter to exit");
             Console.ReadLine();
          }
@@ -19,17 +19,14 @@ namespace PI_generation
             var watch = System.Diagnostics.Stopwatch.StartNew();
             // evrey digit of pi added to it string 
             string myPi = "";
-
             //more about this method here:https://habrahabr.ru/post/188700/
             int[] PiArray = new int[10 * n / 3];
             int[] Reminders = new int[(10 * n / 3)];
             Reminders[Reminders.Length - 1] = 0;
-
             for (int i = 0; i < PiArray.Length - 1; i++)
             {
                 PiArray[i] = 2;
             }
-
             //this part taken from main j cycle only for put ',' after '3'
             OneDigitFounder(ref PiArray,ref Reminders);
 
