@@ -35,8 +35,17 @@ namespace PI_generation
             myPi += ',';
 
             int PotentiallyWrongNumbersCounter = 0;
+            int PercentCounter = 1;
             for (int j = 2; j <= n; j++)
-            {
+
+            {   if ((Convert.ToDouble(j) / n * 100 )> PercentCounter)
+                {
+                    Console.WriteLine(String.Format("Progress:{0}%", PercentCounter));
+                    while((Convert.ToDouble(j)) / n * 100 > PercentCounter)
+                    {
+                        PercentCounter++;
+                    }
+                }
                 OneDigitFounder(ref PiArray,ref Reminders);
                 /*sometimes when we divide on 10 we can get digit >9 , 
                 then we have to change previous digits +1, 
