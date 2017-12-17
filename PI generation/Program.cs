@@ -5,7 +5,7 @@ namespace PI_generation
 {
     class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         { 
             Console.Write("What accuracy you want?(numbers after the decimal point)\n");
             int NumberOfNumbers = Convert.ToInt32(Console.ReadLine());
@@ -17,7 +17,7 @@ namespace PI_generation
        static string FindPi(int n)
         {   // start time counter here 
             var watch = System.Diagnostics.Stopwatch.StartNew();
-            // evrey digit of pi added to it string 
+            // evrey digit of pi added to this string 
             string myPi = "";
             //more about this method here:https://habrahabr.ru/post/188700/
             int[] PiArray = new int[10 * n / 3];
@@ -50,7 +50,7 @@ namespace PI_generation
                 /*sometimes when we divide on 10 we can get digit >9 , 
                 then we have to change previous digits +1, 
                 and if prev digit is 9 we have to change digit before that and etc, 
-                thats why we must have counter of nines*/
+                thats why we must have counter of nines(PotentiallyWrongNumbersCounter)*/
                 if (((PiArray[0] * 10 + Reminders[0]) / 10) == 9)
                     PotentiallyWrongNumbersCounter++;
                 else PotentiallyWrongNumbersCounter = 0;
