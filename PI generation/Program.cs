@@ -7,7 +7,7 @@ namespace PI_generation
     {
         private static void Main(string[] args)
         { 
-            Console.Write("What accuracy you want?(numbers after the decimal point)\n");
+            Console.Write("What accuracy you want?(numbers after the decimal point): ");
             int NumberOfNumbers = Convert.ToInt32(Console.ReadLine());
             Console.Write(FindPi(NumberOfNumbers+1));      
             Console.Write("\nPress enter to exit");
@@ -43,10 +43,10 @@ namespace PI_generation
                     Console.Clear();
                     Console.WriteLine(String.Format("Progress:{0}%", PercentCounter));
                     while((Convert.ToDouble(j)) / n * 100 > PercentCounter)
-                    {
+                        {
                         
-                        PercentCounter++;
-                    }
+                            PercentCounter++;
+                        }
                 }
                 OneDigitFounder(ref PiArray,ref Reminders);
                 /*sometimes when we divide on 10 we can get digit >9 , 
