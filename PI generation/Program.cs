@@ -40,9 +40,11 @@ namespace PI_generation
 
             {   if ((Convert.ToDouble(j) / n * 100 )> PercentCounter)
                 {
+                    Console.Clear();
                     Console.WriteLine(String.Format("Progress:{0}%", PercentCounter));
                     while((Convert.ToDouble(j)) / n * 100 > PercentCounter)
                     {
+                        
                         PercentCounter++;
                     }
                 }
