@@ -41,7 +41,7 @@ namespace PI_generation
             {   if ((Convert.ToDouble(j) / n * 100 )> PercentCounter)
                 {
                     Console.Clear();
-                    Console.WriteLine(String.Format("Progress:{0}%", PercentCounter));
+                    Console.WriteLine("Progress:{0}%", PercentCounter);
                     while((Convert.ToDouble(j)) / n * 100 > PercentCounter)
                         {
                         
@@ -78,7 +78,7 @@ namespace PI_generation
 
             }
             watch.Stop();
-            Console.WriteLine(String.Format("Calculation time is:{0}ms ({1}s)", watch.ElapsedMilliseconds, watch.ElapsedMilliseconds / 1000));
+            Console.WriteLine("Calculation time is:{0}ms ({1}s)", watch.ElapsedMilliseconds, watch.ElapsedMilliseconds / 1000);
             return myPi;
         }
 
