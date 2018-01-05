@@ -6,10 +6,20 @@ namespace PI_generation
     class Program
     {
         private static void Main(string[] args)
-        { 
+        {
             Console.Write("What accuracy you want?(numbers after the decimal point): ");
             int NumberOfNumbers = Convert.ToInt32(Console.ReadLine());
-            Console.Write(FindPi(NumberOfNumbers+1));      
+            if (NumberOfNumbers < 0)
+            {
+                do
+                {
+                    Console.Write("Please,Ener number >0: ");
+                    NumberOfNumbers = Convert.ToInt32(Console.ReadLine());
+
+                } while (NumberOfNumbers < 0);
+            }
+
+            Console.Write(FindPi(NumberOfNumbers + 1));      
             Console.Write("\nPress enter to exit");
             Console.ReadLine();
          }
