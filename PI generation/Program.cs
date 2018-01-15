@@ -8,17 +8,25 @@ namespace PI_generation
         private static void Main(string[] args)
         { 
             Console.Write("What accuracy you want?(numbers after the decimal point): ");
-            int NumberOfNumbers = Convert.ToInt32(Console.ReadLine());
+            int NumberOfNumbers = new int();        
+            string UserInputString= Console.ReadLine();
+            while (!int.TryParse(UserInputString, out NumberOfNumbers))
+            {
+                Console.Write("Write correct value:");
+                UserInputString = Console.ReadLine();
+            }
+
             Console.Write(FindPi(NumberOfNumbers+1));      
             Console.Write("\nPress enter to exit");
             Console.ReadLine();
+            
          }
 
        static string FindPi(int n)
         {   // start time counter here 
             var watch = System.Diagnostics.Stopwatch.StartNew();
             // evrey digit of pi added to this string 
-            string myPi = "";
+            string myPi = null;
             //more about this method here:https://habrahabr.ru/post/188700/
             int[] PiArray = new int[10 * n / 3];
             int[] Reminders = new int[(10 * n / 3)];
