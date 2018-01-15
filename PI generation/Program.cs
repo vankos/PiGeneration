@@ -10,12 +10,11 @@ namespace PI_generation
             Console.Write("What accuracy you want?(numbers after the decimal point): ");
             int NumberOfNumbers = new int();        
             string UserInputString= Console.ReadLine();
-            while (!int.TryParse(UserInputString, out NumberOfNumbers))
+            while ((!int.TryParse(UserInputString, out NumberOfNumbers))||(NumberOfNumbers<0))
             {
                 Console.Write("Write correct value:");
                 UserInputString = Console.ReadLine();
             }
-
             Console.Write(FindPi(NumberOfNumbers+1));      
             Console.Write("\nPress enter to exit");
             Console.ReadLine();
