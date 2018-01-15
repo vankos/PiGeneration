@@ -6,7 +6,7 @@ namespace PI_generation
     class Program
     {
         private static void Main(string[] args)
-        { 
+        {
             Console.Write("What accuracy you want?(numbers after the decimal point): ");
             int NumberOfNumbers = new int();        
             string UserInputString= Console.ReadLine();
