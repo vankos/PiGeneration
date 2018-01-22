@@ -11,8 +11,8 @@ namespace PI_generation
             int numberOfNumbers = new int();
             string userInputString = Console.ReadLine();
             numberOfNumbers = ValidateInput(userInputString);
-            Console.Write(FindPi(numberOfNumbers + 1));
-            Console.Write("\nPress enter to exit");
+            Console.WriteLine("pi={0}",FindPi(numberOfNumbers + 1));
+            Console.Write("Press enter to exit");
             Console.ReadLine();
         }
 
