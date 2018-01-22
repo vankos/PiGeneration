@@ -10,7 +10,7 @@ namespace PI_generation
             Console.Write("What accuracy you want?(numbers after the decimal point): ");
             int numberOfNumbers = new int();
             string userInputString = Console.ReadLine();
-            numberOfNumbers = ValidateInput(ref userInputString);
+            numberOfNumbers = ValidateInput(userInputString);
             Console.Write(FindPi(numberOfNumbers + 1));
             Console.Write("\nPress enter to exit");
             Console.ReadLine();
@@ -102,7 +102,7 @@ namespace PI_generation
             }
         }
 
-        private static int ValidateInput(ref string userInputString)
+        private static int ValidateInput(string userInputString)
         {
             int numberOfNumbers;
             while ((!int.TryParse(userInputString, out numberOfNumbers)) || (numberOfNumbers < 0))
