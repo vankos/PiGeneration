@@ -39,7 +39,7 @@ namespace PI_generation
             int progressPercent = 1;
             for (int j = 2; j <= n; j++)
             {
-                progressPercent = CountPercentage(n, progressPercent, j);
+                progressPercent = CountPercentage(n, progressPercent, j,watch);
                 FoundOneDigit(ref piArray, ref reminders);
                 /*sometimes when we divide on 10 we can get digit >9 , then we have to change previous digits +1, 
                 and if prev digit is 9 we have to change digit before that and etc, thats why we must have counter of nines(PotentiallyWrongNumbersCounter)*/
@@ -51,17 +51,16 @@ namespace PI_generation
                 piArray[0] = (piArray[0] * 10 + reminders[0]) % 10;
             }
             watch.Stop();
-            Console.WriteLine("Calculation time is:{0}ms ({1}s)", watch.ElapsedMilliseconds, watch.ElapsedMilliseconds / 1000);
+            Console.WriteLine("Calculation time is:{0}ms ({1}s))", watch.ElapsedMilliseconds, watch.ElapsedMilliseconds / 1000);
             return myPi;
         }
 
 
-        private static int CountPercentage(int n, int progressPercent, int j)
+        private static int CountPercentage(int n, int progressPercent, int j, System.Diagnostics.Stopwatch watch)
         {
             if ((Convert.ToDouble(j) / n * 100) > progressPercent)
             {
-                Console.Clear();
-                Console.WriteLine("Progress:{0}%", progressPercent);
+                Console.WriteLine("Progress:{0}% (Time:{1}ms ({2}s)", progressPercent, watch.ElapsedMilliseconds, watch.ElapsedMilliseconds / 1000);
                 while ((Convert.ToDouble(j)) / n * 100 > progressPercent)
                 {
                     progressPercent++;
